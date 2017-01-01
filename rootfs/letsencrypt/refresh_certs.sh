@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bash
+#!/bin/bash
 set -e
 
 if [ -e "/tmp/.letsencrypt-lock" ]

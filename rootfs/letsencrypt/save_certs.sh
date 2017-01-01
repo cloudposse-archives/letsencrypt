@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bash
+#!/bin/bash
 
 # $DOMAINS should contain all domains that this container is responsible for
 # renewing. The first one dictates where the cert will live.

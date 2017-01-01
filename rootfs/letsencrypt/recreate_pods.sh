@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bash
+#!/bin/bash
 
 # Update the required env vars for the first pod in each Deployment.
 # This will kick off a rolling update.
