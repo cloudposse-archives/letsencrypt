@@ -1,0 +1,3 @@
+#!/usr/bin/execlineb -P
+
+/provision/prepare_letsencrypt_config.sh
