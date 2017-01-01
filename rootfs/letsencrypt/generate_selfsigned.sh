@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/env bash
 
 CERT_LOCATION='/etc/letsencrypt/live'
 
