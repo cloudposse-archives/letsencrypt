@@ -17,4 +17,4 @@ do
   echo "Domain $i resolved" > /dev/stdout 2>&1
 done
 echo "Generating certs" > /dev/stdout 2>&1
-/letsencrypt/refresh_certs.sh > /dev/stdout 2>&1
+/usr/bin/with-contenv /letsencrypt/refresh_certs.sh > /dev/stdout 2>&1
