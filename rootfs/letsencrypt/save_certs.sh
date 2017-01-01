@@ -21,10 +21,10 @@ DOMAINS=($DOMAINS)
 
 DOMAIN=${DOMAINS[0]}
 
-CERT=$(cat $CERT_LOCATION/$DOMAIN/fullchain.pem | base64)
-KEY=$(cat $CERT_LOCATION/$DOMAIN/privkey.pem | base64)
-PEM=$(cat $CERT_LOCATION/$DOMAIN/fullchain.pem $CERT_LOCATION/$DOMAIN/privkey.pem | base64)
-DHPARAM=$(openssl dhparam 2048 | base64)
+CERT=$(cat $CERT_LOCATION/$DOMAIN/fullchain.pem | tr -d '\n'| base64)
+KEY=$(cat $CERT_LOCATION/$DOMAIN/privkey.pem | tr -d '\n' | base64)
+PEM=$(cat $CERT_LOCATION/$DOMAIN/fullchain.pem $CERT_LOCATION/$DOMAIN/privkey.pem | tr -d '\n'| base64)
+DHPARAM=$(openssl dhparam 2048 | tr -d '\n'| base64)
 
 NAMESPACE=${NAMESPACE:-default}
 TYPE=${TYPE:-Opaque}
