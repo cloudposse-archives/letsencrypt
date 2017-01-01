@@ -3,18 +3,11 @@ FROM nginx:alpine
 ARG S6_OVERLAY_VER=1.17.2.0
 ARG K8S_VER=v1.3.6
 
-RUN apk add --no-cache git make curl wget bc bash openssl
+RUN apk add --no-cache git make curl wget bc bash openssl certbot
 
 ## Install certbot
 RUN mkdir -p /letsencrypt/challenges/.well-known/acme-challenge
-RUN git clone https://github.com/certbot/certbot /letsencrypt/app
-
-WORKDIR /letsencrypt/app
-
-RUN ./letsencrypt-auto; exit 0
-
-RUN ln -s /root/.local/share/letsencrypt/bin/letsencrypt /usr/local/bin/letsencrypt
-
+RUN mkdir -p /etc/letsencrypt
 
 # You should see "OK" if you go to http://<domain>/.well-known/acme-challenge/health
 RUN echo "OK" > /letsencrypt/challenges/.well-known/acme-challenge/health

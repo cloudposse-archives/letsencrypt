@@ -20,7 +20,7 @@ do
    # do whatever on $i
 done
 
-/usr/local/bin/letsencrypt certonly \
+ /usr/bin/certbot certonly \
     --webroot -w /letsencrypt/challenges/ \
     --text --renew-by-default --agree-tos \
       $domain_args \

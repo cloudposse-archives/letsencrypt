@@ -1,3 +1,0 @@
-#!/usr/bin/execlineb -P
-
-background { /provision/on_startup.sh }
