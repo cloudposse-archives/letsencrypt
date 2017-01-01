@@ -3,7 +3,7 @@ FROM nginx:alpine
 ARG S6_OVERLAY_VER=1.17.2.0
 ARG K8S_VER=v1.3.6
 
-RUN apk add --no-cache git make curl wget bc bash
+RUN apk add --no-cache git make curl wget bc bash openssl
 
 ## Install certbot
 RUN mkdir -p /letsencrypt/challenges/.well-known/acme-challenge
