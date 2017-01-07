@@ -38,16 +38,16 @@ kubectl exec -it <pod> -- bash -c 'EMAIL=fred@fred.com DOMAINS=example.com foo.e
 
 ## Environment variables:
 
- - EMAIL - the email address to obtain certificates on behalf of.
- - DOMAINS - a space separated list of domains to obtain a certificate for.
- - LETSENCRYPT_ENDPOINT
+ - `EMAIL` - the email address to obtain certificates on behalf of.
+ - `DOMAINS` - a space separated list of domains to obtain a certificate for.
+ - `LETSENCRYPT_ENDPOINT`
    - If set, will be used to populate the /etc/letsencrypt/cli.ini file with
      the given server value. For testing use
      https://acme-staging.api.letsencrypt.org/directory
- - DEPLOYMENTS - a space separated list of deployments whose pods should be
+ - `DEPLOYMENTS` - a space separated list of deployments whose pods should be
    refreshed after a certificate save
- - SECRET_NAME - the name to save the secrets under
- - NAMESPACE - the namespace under which the secrets should be available
- - TYPE - the type of the secrets (default is Opaque)
- - CRON_FREQUENCY - the 5-part frequency of the cron job. Default is a random
+ - `SECRET_NAME` - the name to save the secrets under
+ - `NAMESPACE` - the namespace under which the secrets should be available
+ - `TYPE` - the type of the secrets (default is Opaque)
+ - `CRON_FREQUENCY` - the 5-part frequency of the cron job. Default is a random
    time in the range `0-59 0-23 1-27 * *`
