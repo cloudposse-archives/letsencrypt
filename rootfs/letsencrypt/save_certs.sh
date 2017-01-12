@@ -21,8 +21,8 @@ DOMAINS=($DOMAINS)
 
 DOMAIN=${DOMAINS[0]}
 
-CERT=$(cat $CERT_LOCATION/$DOMAIN/fullchain.pem | base64 | tr -d '\n' )
-KEY=$(cat $CERT_LOCATION/$DOMAIN/privkey.pem | base64 | tr -d '\n')
+CERT=$(base64 $CERT_LOCATION/$DOMAIN/fullchain.pem | tr -d '\n' )
+KEY=$(base64 $CERT_LOCATION/$DOMAIN/privkey.pem | tr -d '\n')
 PEM=$(cat $CERT_LOCATION/$DOMAIN/fullchain.pem $CERT_LOCATION/$DOMAIN/privkey.pem | base64 | tr -d '\n' )
 DHPARAM=$(openssl dhparam 2048 | base64 | tr -d '\n' )
 
