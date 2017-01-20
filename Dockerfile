@@ -13,9 +13,8 @@ RUN mkdir -p /letsencrypt/challenges/.well-known/acme-challenge && \
 RUN echo "OK" > /letsencrypt/challenges/.well-known/acme-challenge/health
 
 # Install kubectl
-RUN wget https://storage.googleapis.com/kubernetes-release/release/${K8S_VER}/bin/linux/amd64/kubectl && \
-    chmod +x kubectl && \
-    mv kubectl /usr/local/bin/
+ADD https://storage.googleapis.com/kubernetes-release/release/${K8S_VER}/bin/linux/amd64/kubectl /usr/local/bin/kubectl
+RUN  chmod +x /usr/local/bin/kubectl
 
 # Install s6-overlay
 RUN curl https://s3.amazonaws.com/wodby-releases/s6-overlay/v${S6_OVERLAY_VER}/s6-overlay-amd64.tar.gz | tar xz -C /
